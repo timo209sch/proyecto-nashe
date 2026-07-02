@@ -1,0 +1,379 @@
+/*paleta de colores*/
+:root {
+    --color-principal: #1A1A1A;    
+    --color-secundario: #D4A137;
+    --color-fondo: #F9F6F0;        
+    --color-texto: #303030;        
+    --color-blanco: #FFFFFF;
+    --color-gris-borde: #E0E0E0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1,6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+/*flexbox en header y enlaces*/
+.main-header {
+    background-color: var(--color-principal);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-secundario);
+}
+
+.logo {
+    height: 45px;
+    width: auto;
+    display: flex;
+}
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-action-top {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-action-top:hover {
+    color: var(--color-secundario);
+}
+
+.btn-action-top.accent {
+    color: var(--color-secundario);
+}
+
+.icon-nav {
+    width: 16px;
+    height: 16px;
+}
+
+/*flexbox en nav principal*/
+
+.main-nav {
+    background-color: var(--color-blanco);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: var(--color-principal);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.nav-container a:hover, .nav-container a.active {
+    color: var(--color-secundario);
+    border-bottom: 2px solid var(--color-secundario);
+}
+
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://havanna.com.ar/data/upload/home_slider/8cbe3ec008beaa7c2a9dfacd800e8181.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    text-align: center;
+    color: var(--color-blanco);
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+}
+
+.hero-overlay h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-blanco);
+}
+
+/*flexbox de las cartas*/
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h3 {
+    font-size: 2rem;
+    color: var(--color-principal);
+    text-transform: uppercase;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-gris-borde);
+    border-radius: 6px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.card-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Hace que el botón siempre se alinee abajo */
+}
+
+.btn-card {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid var(--color-principal);
+    color: var(--color-principal);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.btn-card:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+}
+
+/*footer*/
+
+.main-footer {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-socials img {
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+}
+
+/*diseño para celular sin cross horizontal*/
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav-container ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .nav-container a {
+        display: block;
+        padding: 8px 0;
+    }
+
+    /*  Las cards se apilan verticalmente */
+    .cards-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main-footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/*estilo de la tabla*/
+   
+.table-responsive {
+    overflow-x: auto; /* Evita que rompa en móviles si la pantalla es muy chica */
+    margin-top: 20px;
+}
+
+.menu-table {
+    width: 100%;
+    border-collapse: collapse; /* Une los bordes dobles en uno solo */
+    background-color: var(--color-blanco);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.menu-table th, .menu-table td {
+    padding: 15px 20px; /* Padding en celdas pedido por rúbrica */
+    text-align: left;
+}
+
+.menu-table th {
+    background-color: var(--color-principal);
+    color: var(--color-secundario); /* Texto dorado sobre fondo negro */
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.menu-table td {
+    border-bottom: 1px solid var(--color-gris-borde); /* Bordes en celdas */
+    font-size: 0.95rem;
+}
+
+/* fondo alternado*/
+.menu-table tbody tr:nth-child(even) {
+    background-color: #F1ECE3; /* tono crema */
+}
+
+.menu-table tbody tr:hover {
+    background-color: #EAE3D5; /* efecto al pasar el mouse */
+}
+
+/*estilo del formulario*/
+.form-section {
+    max-width: 600px; /* Centra y acota el ancho del formulario */
+    margin: 0 auto;
+    background-color: var(--color-blanco);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--color-gris-borde);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--color-principal);
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    border: 1px solid var(--color-gris-borde);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #FAFAFA;
+}
+
+/*cambia de color al seleccionar*/
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--color-secundario); /* Cambia al dorado de la marca */
+    background-color: var(--color-blanco);
+    box-shadow: 0 0 5px rgba(212, 161, 55, 0.3); /* Destello dorado */
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+}
